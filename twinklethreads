@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twinkle Threads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #fff8fb;
+      --card: #fff;
+      --accent:#ffd7e6;
+      --muted:#b27b92;
+      --shadow: 0 6px 18px rgba(199,144,157,0.18);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter,system-ui,Arial; background:linear-gradient(180deg,#fff8fb 0%, #fffefc 100%); color:#3b2940;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    header{padding:18px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{font-family:'Amatic SC',cursive;font-size:30px;color:#6c2740}
+    .tag{font-size:12px;color:var(--muted)}
+    .controls{display:flex;gap:12px;align-items:center}
+    .icon-btn{background:var(--card);border:none;padding:10px;border-radius:12px;box-shadow:var(--shadow);cursor:pointer}
+    .cart-bubble{background:#ff6fa3;color:white;padding:4px 8px;border-radius:999px;font-size:12px;margin-left:6px}
+    main{padding:0 20px 80px}
+    .hero{display:flex;gap:20px;align-items:center;justify-content:space-between;margin:12px 0}
+    .hero-left{max-width:680px}
+    .badge{background:linear-gradient(90deg,#ffd7e6,#fff0f6);padding:6px 10px;border-radius:999px;font-size:13px;margin-bottom:12px;display:inline-block}
+    h1{margin:0;font-size:38px;color:#5b2440}
+    p.lead{color:#6b4b5f;opacity:.9}
+    .cta{margin-top:12px}
+    .btn{background:linear-gradient(90deg,#ffb6d2,#ff9cc9);border:none;padding:12px 16px;border-radius:14px;color:white;font-weight:600;cursor:pointer;box-shadow:0 8px 24px rgba(255,143,184,0.18)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;margin-top:18px}
+    .card{background:var(--card);border-radius:16px;padding:12px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .card .img{height:180px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff5fb);display:flex;align-items:center;justify-content:center}
+    .card img{max-width:90%;max-height:90%;object-fit:contain}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .meta .title{font-weight:600}
+    .meta .price{font-weight:700;color:#b7356a}
+    .actions{display:flex;gap:8px;margin-top:10px}
+    .small{padding:8px 10px;border-radius:12px;border:none;cursor:pointer}
+    .post{border-radius:14px;overflow:hidden}
+    .post .post-meta{padding:10px 12px;display:flex;align-items:center;gap:10px}
+    .avatar{width:36px;height:36px;border-radius:999px;background:linear-gradient(90deg,#ffd7e6,#ffd1f0);display:flex;align-items:center;justify-content:center;font-weight:700;color:#6c2740}
+    #sellerPanel{position:fixed;right:20px;bottom:20px;background:var(--card);padding:12px;border-radius:12px;box-shadow:var(--shadow);width:320px;max-width:calc(100% - 40px)}
+    #sellerPanel h4{margin:0 0 8px 0}
+    .field{display:flex;flex-direction:column;margin-bottom:8px}
+    input,textarea{padding:10px;border-radius:10px;border:1px solid #eee}
+    .overlay{position:fixed;inset:0;background:rgba(51,26,35,0.35);display:none;align-items:center;justify-content:center}
+    .modal{background:var(--card);padding:20px;border-radius:16px;box-shadow:var(--shadow);width:420px;max-width:94%}
+    footer{padding:24px 20px;text-align:center;color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">Twinkle Threads ✨</div>
+      <div class="tag">Handmade woolen keychains • cozy pastel vibes</div>
+    </div>
+    <div class="controls">
+      <button class="icon-btn" id="openLogin">Seller Login</button>
+      <button class="icon-btn" id="openCart">Cart <span id="cartCount" class="cart-bubble">0</span></button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <div class="badge">New • Soft Wool Collection</div>
+        <h1>Twinkle Threads — Woolen keychains made with love</h1>
+        <p class="lead">Cute, handcrafted keychains perfect for backpacks, phone charms, and gifts. Soft wool, pastel colours, and tiny sparkles — made for girls who love cozy things.</p>
+        <div class="cta"><button class="btn" id="shopNow">Shop Now</button></div>
+      </div>
+    </section>
+    <section>
+      <div class="grid" id="productGrid"></div>
+    </section>
+  </main>
+  <footer>© 2025 Twinkle Threads | Crafted with Love 🧶</footer>
+  <script>
+    const SELLER_WHATSAPP = '919527738389';
+  </script>
+</body>
+</html>
